@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+QtCPPCalculator/QtCPPCalculator.vcxproj
+QtCPPCalculator/QtCPPCalculator.vcxproj
+QtCPPCalculator/QtCPPCalculator.vcxproj.filters
