@@ -12,6 +12,26 @@ int main(int argc, char *argv[])
     double num2;
     double displayNumber;
     double result;
+    
+    double sum(double x, double y)
+    {
+        return x + y;
+    }
+
+    double diff(double x, double y)
+    {
+        return x - y;
+    }
+
+    double product(double x, double y)
+    {
+        return x * y;
+    }
+
+    double quotient(double x, double y)
+    {
+        return x / y;
+    }
 
     return a.exec();
 }
