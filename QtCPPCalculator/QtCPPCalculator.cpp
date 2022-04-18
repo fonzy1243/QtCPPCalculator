@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include <iostream>
 
-double currentNumber;
+double currentNumber = 0;
 double previousNumber;
 double displayNumber;
 double result;

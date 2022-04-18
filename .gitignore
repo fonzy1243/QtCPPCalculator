@@ -365,3 +365,4 @@ MigrationBackup/
 FodyWeavers.xsd
 QtCPPCalculator/QtCPPCalculator.vcxproj
 *.vcxproj
+*.vcxproj
