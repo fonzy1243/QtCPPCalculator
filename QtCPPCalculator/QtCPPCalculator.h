@@ -10,6 +10,15 @@ class QtCPPCalculator : public QMainWindow
 public:
     QtCPPCalculator(QWidget *parent = Q_NULLPTR);
 
+private slots:
+    void on_nine_clicked();
+
 private:
     Ui::QtCPPCalculatorClass ui;
 };
+
+double num1;
+double num2;
+double displayNumber;
+double result;
+int currentEdit = 1;

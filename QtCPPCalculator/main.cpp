@@ -9,11 +9,6 @@ int main(int argc, char *argv[])
 
     QtCPPCalculator w;
     w.show();
-    double num1;
-    double num2;
-    double displayNumber;
-    double result;
-    int currentEdit = 1;
 
     return a.exec();
 }
