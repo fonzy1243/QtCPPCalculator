@@ -1136,7 +1136,17 @@ QPushButton:pressed {
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>delete</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>resources/fluent_backspace.svg</normaloff>resources/fluent_backspace.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
        </property>
        <property name="autoDefault">
         <bool>false</bool>
