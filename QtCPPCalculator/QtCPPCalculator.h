@@ -16,9 +16,3 @@ private slots:
 private:
     Ui::QtCPPCalculatorClass ui;
 };
-
-double num1;
-double num2;
-double displayNumber;
-double result;
-int currentEdit = 1;
