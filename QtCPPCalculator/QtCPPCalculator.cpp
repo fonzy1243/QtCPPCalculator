@@ -11,7 +11,7 @@ QtCPPCalculator::QtCPPCalculator(QWidget *parent)
 void QtCPPCalculator::on_nine_clicked()
 {
     if (currentEdit == 1) {
-        num1 = 9
+        num1 = 9;
     }
 }
 
