@@ -1,7 +1,9 @@
 #include "QtCPPCalculator.h"
 #include "stdafx.h"
 #include <QtWidgets/QApplication>
+#include <QMetaObject>
 #include <math.h>
+
 
 int main(int argc, char *argv[])
 {
@@ -9,6 +11,8 @@ int main(int argc, char *argv[])
 
     QtCPPCalculator w;
     w.show();
-
+   
     return a.exec();
+
+
 }

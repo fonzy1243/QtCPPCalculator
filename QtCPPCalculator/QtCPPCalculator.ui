@@ -328,6 +328,9 @@ QPushButton:pressed {
       <bold>true</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
 	color: white;
@@ -1290,7 +1293,7 @@ QPushButton:pressed {
       </widget>
      </item>
      <item row="0" column="3">
-      <widget class="QPushButton" name="delete_2">
+      <widget class="QPushButton" name="del">
        <property name="minimumSize">
         <size>
          <width>71</width>
@@ -1494,7 +1497,7 @@ QPushButton:pressed {
   <tabstop>pi</tabstop>
   <tabstop>ce</tabstop>
   <tabstop>clear</tabstop>
-  <tabstop>delete_2</tabstop>
+  <tabstop>del</tabstop>
   <tabstop>modulus</tabstop>
   <tabstop>power</tabstop>
   <tabstop>factorial</tabstop>
