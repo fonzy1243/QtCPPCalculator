@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
     double num2;
     double displayNumber;
     double result;
+    int currentEdit = 1;
 
     return a.exec();
 }

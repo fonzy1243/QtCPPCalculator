@@ -491,6 +491,22 @@
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	background: rgb(39, 39, 39);
+	color: white;
+	border-radius: 4px;
+	transition: background 0.2s;
+}
+
+QPushButton:hover {
+	background: rgb(51, 51, 51);
+}
+
+QPushButton:pressed {
+	background: rgb(62, 62, 62);
+}</string>
+       </property>
        <property name="text">
         <string>pi</string>
        </property>
@@ -1274,6 +1290,32 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>pi</tabstop>
+  <tabstop>ce</tabstop>
+  <tabstop>clear</tabstop>
+  <tabstop>delete_2</tabstop>
+  <tabstop>modulus</tabstop>
+  <tabstop>power</tabstop>
+  <tabstop>factorial</tabstop>
+  <tabstop>divide</tabstop>
+  <tabstop>seven</tabstop>
+  <tabstop>eight</tabstop>
+  <tabstop>nine</tabstop>
+  <tabstop>multiply</tabstop>
+  <tabstop>four</tabstop>
+  <tabstop>five</tabstop>
+  <tabstop>six</tabstop>
+  <tabstop>subtract</tabstop>
+  <tabstop>one</tabstop>
+  <tabstop>two</tabstop>
+  <tabstop>three</tabstop>
+  <tabstop>add</tabstop>
+  <tabstop>negate</tabstop>
+  <tabstop>zero</tabstop>
+  <tabstop>dot</tabstop>
+  <tabstop>equal</tabstop>
+ </tabstops>
  <resources>
   <include location="QtCPPCalculator.qrc"/>
  </resources>
