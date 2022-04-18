@@ -10,9 +10,6 @@ class QtCPPCalculator : public QMainWindow
 public:
     QtCPPCalculator(QWidget *parent = Q_NULLPTR);
 
-private slots:
-    void on_nine_clicked();
-
 private:
     Ui::QtCPPCalculatorClass ui;
 };
