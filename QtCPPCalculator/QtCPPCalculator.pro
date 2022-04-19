@@ -5,7 +5,7 @@
 TEMPLATE = app
 TARGET = QtCPPCalculator
 DESTDIR = ../x64/Debug
-CONFIG += debug
+CONFIG += console
 LIBS += -L"."
 DEPENDPATH += .
 MOC_DIR += .

@@ -24,7 +24,8 @@ private slots:
     void on_eight_clicked();
     void on_nine_clicked();
     void on_del_clicked();
-
+    void on_add_toggled();
+    void on_clear_clicked();
 
 private:
     Ui::QtCPPCalculatorClass ui;
