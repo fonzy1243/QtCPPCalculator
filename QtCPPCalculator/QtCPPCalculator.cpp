@@ -150,8 +150,15 @@ void QtCPPCalculator::on_seven_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "7");
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "7");
-    currentNumber.append("7");
+
+    if (ui.equationDisplayField->text() == "0") {
+        ui.equationDisplayField->setText("7");
+    }
+    else {
+        ui.equationDisplayField->setText(ui.equationDisplayField->text() + "7");
+    }
+    
+    currentNumber += "7";
 }
 
 void QtCPPCalculator::on_eight_clicked()
@@ -165,7 +172,7 @@ void QtCPPCalculator::on_eight_clicked()
         ui.displayField->setText(ui.displayField->text() + "8");
     }
     ui.equationDisplayField->setText(ui.equationDisplayField->text() + "8");
-    currentNumber.append("8");
+    currentNumber += "8";
 }
 
 void QtCPPCalculator::on_nine_clicked()
@@ -179,7 +186,7 @@ void QtCPPCalculator::on_nine_clicked()
         ui.displayField->setText(ui.displayField->text() + "9");
     }
     ui.equationDisplayField->setText(ui.equationDisplayField->text() + "9");
-    currentNumber.append("9");
+    currentNumber += "9";
 }
 
 // this delete logic is ideal but does not work properly with duplicate numbers!
