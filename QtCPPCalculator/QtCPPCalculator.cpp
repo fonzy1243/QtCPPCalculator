@@ -182,18 +182,19 @@ void QtCPPCalculator::on_nine_clicked()
     currentNumber.append("9");
 }
 
-// this delete logic is ideal but does not work properly with duplicate numbers!
 void QtCPPCalculator::on_del_clicked()
 {
-    if (ui.displayField->text().size() == 1) {
+    if (ui.displayField->text() == "0") {
+        ui.displayField->setText("0");
+    }
+    else if (ui.displayField->text() == "")
+    {
         ui.displayField->setText("0");
     }
     else
     {
         ui.displayField->setText(ui.displayField->text().remove(ui.displayField->text().last(1)));
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text().remove(ui.displayField->text().last(1)));
-    currentNumber.pop_back();
 }
 
 void QtCPPCalculator::on_add_toggled()
