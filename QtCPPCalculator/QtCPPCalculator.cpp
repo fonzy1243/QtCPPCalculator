@@ -49,6 +49,7 @@ void QtCPPCalculator::on_zero_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "0");
     }
+    currentNumber.append("0");
 }
 
 void QtCPPCalculator::on_one_clicked()
@@ -60,6 +61,7 @@ void QtCPPCalculator::on_one_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "1");
     }
+    currentNumber.append("1");
 }
 
 void QtCPPCalculator::on_two_clicked()
@@ -71,6 +73,7 @@ void QtCPPCalculator::on_two_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "2");
     }
+    currentNumber.append("2");
 }
 
 void QtCPPCalculator::on_three_clicked()
@@ -82,6 +85,7 @@ void QtCPPCalculator::on_three_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "3");
     }
+    currentNumber.append("3");
 }
 
 void QtCPPCalculator::on_four_clicked()
@@ -93,6 +97,7 @@ void QtCPPCalculator::on_four_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "4");
     }
+    currentNumber.append("4");
 }
 
 void QtCPPCalculator::on_five_clicked()
@@ -104,6 +109,7 @@ void QtCPPCalculator::on_five_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "5");
     }
+    currentNumber.append("5");
 }
 
 void QtCPPCalculator::on_six_clicked()
@@ -115,6 +121,7 @@ void QtCPPCalculator::on_six_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "6");
     }
+    currentNumber.append("6");
 }
 
 void QtCPPCalculator::on_seven_clicked()
@@ -126,6 +133,7 @@ void QtCPPCalculator::on_seven_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "7");
     }
+    currentNumber.append("7");
 }
 
 void QtCPPCalculator::on_eight_clicked()
@@ -137,6 +145,7 @@ void QtCPPCalculator::on_eight_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "8");
     }
+    currentNumber.append("8");
 }
 
 void QtCPPCalculator::on_nine_clicked()
@@ -148,20 +157,18 @@ void QtCPPCalculator::on_nine_clicked()
     {
         ui.displayField->setText(ui.displayField->text() + "9");
     }
+    currentNumber.append("9");
 }
 
 void QtCPPCalculator::on_del_clicked()
 {
-    if (ui.displayField->text() == "0") {
-        ui.displayField->setText("0");
-    }
-    else if (ui.displayField->text() == "") {
+    if (ui.displayField->text().size() == 1) {
         ui.displayField->setText("0");
     }
     else {
         ui.displayField->setText(ui.displayField->text().remove(ui.displayField->text().last(1)));
     }
-    
+    currentNumber.pop_back();
 }
 
 /* NOT WORKING
