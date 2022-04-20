@@ -6,11 +6,14 @@
 #include <string>
 using namespace std;
 
-string currentNumber = "0";
-string previousNumber = "0";
-string displayNumber = "0";
+QString currentNumber = "0";
+QString previousNumber = "0";
+QString displayNumber = "0";
+QString equationNumber = "0";
+QString inputNumber;
 char operation;
 double result;
+
 
 double sum(double x, double y)
 {
@@ -32,7 +35,18 @@ double quotient(double x, double y)
     return x / y;
 }
 
-QtCPPCalculator::QtCPPCalculator(QWidget *parent)
+/*
+double factorial(double x)
+{
+    while (x < 0)
+    {
+
+    }
+}
+*/
+
+
+QtCPPCalculator::QtCPPCalculator(QWidget* parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
@@ -42,159 +56,210 @@ QtCPPCalculator::QtCPPCalculator(QWidget *parent)
 // code below for when buttons are clicked
 void QtCPPCalculator::on_zero_clicked()
 {
+    inputNumber = "0";
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("0");
-        ui.equationDisplayField->setText("0");
+        inputNumber = "0";
+        currentNumber = "0";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
     else
     {
-        ui.displayField->setText(ui.displayField->text() + "0");
+        inputNumber = "0";
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "0");
-    currentNumber.append("0");
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_one_clicked()
 {
+    inputNumber = "1";
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("1");
-        ui.equationDisplayField->setText("1");
+        inputNumber = "1";
+        currentNumber = "1";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
     else
     {
-        ui.displayField->setText(ui.displayField->text() + "1");
-        
+        inputNumber = "1";
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "1");
-    currentNumber.append("1");
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_two_clicked()
 {
+    inputNumber = "2";
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("2");
-        ui.equationDisplayField->setText("2");
+        inputNumber = "2";
+        currentNumber = "2";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
     else
     {
-        ui.displayField->setText(ui.displayField->text() + "2");
+        inputNumber = "2";
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "2");
-    currentNumber.append("2");
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_three_clicked()
 {
+    inputNumber = "3";
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("3");
-        ui.equationDisplayField->setText("3");
+        inputNumber = "3";
+        currentNumber = "3";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
     else
     {
-        ui.displayField->setText(ui.displayField->text() + "3");
+        inputNumber = "3";
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "3");
-    currentNumber.append("3");
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_four_clicked()
 {
+    inputNumber = "4";
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("4");
-        ui.equationDisplayField->setText("4");
+        inputNumber = "4";
+        currentNumber = "4";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
     else
     {
-        ui.displayField->setText(ui.displayField->text() + "4");
+        inputNumber = "4";
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "4");
-    currentNumber.append("4");
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_five_clicked()
 {
+    inputNumber = "5";
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("5");
-        ui.equationDisplayField->setText("5");
+        inputNumber = "5";
+        currentNumber = "5";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
     else
     {
-        ui.displayField->setText(ui.displayField->text() + "5");
+        inputNumber = "5";
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "5");
-    currentNumber.append("5");
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_six_clicked()
 {
+    inputNumber = "6";
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("6");
-        ui.equationDisplayField->setText("6");
+        inputNumber = "6";
+        currentNumber = "6";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
     else
     {
-        ui.displayField->setText(ui.displayField->text() + "6");
+        inputNumber = "6";
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "6");
-    currentNumber.append("6");
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_seven_clicked()
 {
+    inputNumber = "7";
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("7");
-        ui.equationDisplayField->setText("7");
+        currentNumber = "7";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
-    else if (ui.displayField->text() != "0")
+    else
     {
-        ui.displayField->setText(ui.displayField->text() + "7");
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "7");
-    currentNumber.append("7");
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_eight_clicked()
 {
+    inputNumber = "8";
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("8");
-        ui.equationDisplayField->setText("8");
+        inputNumber = "8";
+        currentNumber = "8";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
     else
     {
-        ui.displayField->setText(ui.displayField->text() + "8");
+        inputNumber = "8";
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "8");
-<<<<<<< HEAD
-<<<<<<< HEAD
-    currentNumber += "8";
-=======
-    currentNumber.append("8");
->>>>>>> parent of f7871ee (Merge branch 'input' into ui)
-=======
-    currentNumber.append("8");
->>>>>>> parent of f7871ee (Merge branch 'input' into ui)
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_nine_clicked()
 {
+    inputNumber = "9";
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("9");
-        ui.equationDisplayField->setText("9");
+        inputNumber = "9";
+        currentNumber = "9";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
     else
     {
-        ui.displayField->setText(ui.displayField->text() + "9");
+        inputNumber = "9";
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "9");
-<<<<<<< HEAD
-<<<<<<< HEAD
-    currentNumber += "9";
-=======
-    currentNumber.append("9");
->>>>>>> parent of f7871ee (Merge branch 'input' into ui)
-=======
-    currentNumber.append("9");
->>>>>>> parent of f7871ee (Merge branch 'input' into ui)
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_del_clicked()
