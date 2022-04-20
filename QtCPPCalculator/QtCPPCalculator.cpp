@@ -35,6 +35,17 @@ double quotient(double x, double y)
     return x / y;
 }
 
+/*
+double factorial(double x)
+{
+    while (x < 0)
+    {
+
+    }
+}
+*/
+
+
 QtCPPCalculator::QtCPPCalculator(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -45,6 +56,7 @@ QtCPPCalculator::QtCPPCalculator(QWidget *parent)
 // code below for when buttons are clicked
 void QtCPPCalculator::on_zero_clicked()
 {
+    inputNumber = "0";
     if (ui.displayField->text() == "0") {
         inputNumber = "0";
         currentNumber = "0";
@@ -65,6 +77,7 @@ void QtCPPCalculator::on_zero_clicked()
 
 void QtCPPCalculator::on_one_clicked()
 {
+    inputNumber = "1";
     if (ui.displayField->text() == "0") {
         inputNumber = "1";
         currentNumber = "1";
@@ -85,6 +98,7 @@ void QtCPPCalculator::on_one_clicked()
 
 void QtCPPCalculator::on_two_clicked()
 {
+    inputNumber = "2";
     if (ui.displayField->text() == "0") {
         inputNumber = "2";
         currentNumber = "2";
@@ -105,6 +119,7 @@ void QtCPPCalculator::on_two_clicked()
 
 void QtCPPCalculator::on_three_clicked()
 {
+    inputNumber = "3";
     if (ui.displayField->text() == "0") {
         inputNumber = "3";
         currentNumber = "3";
@@ -125,6 +140,7 @@ void QtCPPCalculator::on_three_clicked()
 
 void QtCPPCalculator::on_four_clicked()
 {
+    inputNumber = "4";
     if (ui.displayField->text() == "0") {
         inputNumber = "4";
         currentNumber = "4";
@@ -145,6 +161,7 @@ void QtCPPCalculator::on_four_clicked()
 
 void QtCPPCalculator::on_five_clicked()
 {
+    inputNumber = "5";
     if (ui.displayField->text() == "0") {
         inputNumber = "5";
         currentNumber = "5";
@@ -165,6 +182,7 @@ void QtCPPCalculator::on_five_clicked()
 
 void QtCPPCalculator::on_six_clicked()
 {
+    inputNumber = "6";
     if (ui.displayField->text() == "0") {
         inputNumber = "6";
         currentNumber = "6";
@@ -185,15 +203,14 @@ void QtCPPCalculator::on_six_clicked()
 
 void QtCPPCalculator::on_seven_clicked()
 {
+    inputNumber = "7";
     if (ui.displayField->text() == "0") {
-        inputNumber = "7";
         currentNumber = "7";
         ui.displayField->setText(inputNumber);
         displayNumber = currentNumber;
     }
     else
     {
-        inputNumber = "7";
         currentNumber = ui.displayField->text().append(inputNumber);
         ui.displayField->setText(ui.displayField->text() + inputNumber);
         displayNumber = currentNumber;
@@ -205,6 +222,7 @@ void QtCPPCalculator::on_seven_clicked()
 
 void QtCPPCalculator::on_eight_clicked()
 {
+    inputNumber = "8";
     if (ui.displayField->text() == "0") {
         inputNumber = "8";
         currentNumber = "8";
@@ -225,6 +243,7 @@ void QtCPPCalculator::on_eight_clicked()
 
 void QtCPPCalculator::on_nine_clicked()
 {
+    inputNumber = "9";
     if (ui.displayField->text() == "0") {
         inputNumber = "9";
         currentNumber = "9";
