@@ -12,7 +12,6 @@ string displayNumber = "0";
 char operation;
 double result;
 
-
 double sum(double x, double y)
 {
     return x + y;
@@ -208,6 +207,43 @@ void QtCPPCalculator::on_add_toggled()
         ui.displayField->setText("0");
         ui.equationDisplayField->setText(ui.equationDisplayField->text() + "+");
     }
+
+    operation = 'a';
+}
+
+void QtCPPCalculator::on_subtract_toggled()
+{
+    if (previousNumber == "0") {
+        previousNumber = currentNumber;
+        currentNumber = "0";
+        ui.displayField->setText("0");
+        ui.equationDisplayField->setText(ui.equationDisplayField->text() + "-");
+    }
+
+    operation = 's';
+}
+
+void QtCPPCalculator::on_multiply_toggled()
+{
+    if (previousNumber == "0") {
+        previousNumber = currentNumber;
+        currentNumber = "0";
+        ui.displayField->setText("0");
+        ui.equationDisplayField->setText(ui.equationDisplayField->text() +  "*");
+    }
+    operation = 'm';
+}
+
+void QtCPPCalculator::on_divide_toggled()
+{
+    if (previousNumber == "0") {
+        previousNumber = currentNumber;
+        currentNumber = "0";
+        ui.displayField->setText("0");
+        ui.equationDisplayField->setText(ui.equationDisplayField->text() + "/");
+    }
+    
+    operation = 'd';
 }
 
 void QtCPPCalculator::on_clear_clicked()
@@ -215,6 +251,10 @@ void QtCPPCalculator::on_clear_clicked()
     currentNumber, previousNumber = "0";
     ui.displayField->setText("0");
     ui.equationDisplayField->setText("0");
+    ui.add->setChecked(false);
+    ui.subtract->setChecked(false);
+    ui.multiply->setChecked(false);
+    ui.divide->setChecked(false);
 }
 
 /* NOT WORKING

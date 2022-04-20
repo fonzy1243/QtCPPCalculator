@@ -25,6 +25,9 @@ private slots:
     void on_nine_clicked();
     void on_del_clicked();
     void on_add_toggled();
+    void on_subtract_toggled();
+    void on_multiply_toggled();
+    void on_divide_toggled();
     void on_clear_clicked();
 
 private:
