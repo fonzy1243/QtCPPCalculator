@@ -389,6 +389,15 @@ void QtCPPCalculator::on_clear_clicked()
     ui.divide->setChecked(false);
 }
 
+void QtCPPCalculator::on_equal_clicked()
+{
+    switch (operation) {
+        case 'a':
+            result = previousNumber.toDouble() + currentNumber.toDouble();
+            ui.displayField->setText(QString::number(result));
+    }
+}
+
 /* NOT WORKING
 void QtCPPCalculator::ifDisplayBlank()
 {

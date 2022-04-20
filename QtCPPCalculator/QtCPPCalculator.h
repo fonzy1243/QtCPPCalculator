@@ -29,6 +29,7 @@ private slots:
     void on_multiply_toggled();
     void on_divide_toggled();
     void on_clear_clicked();
+    void on_equal_clicked();
 
 private:
     Ui::QtCPPCalculatorClass ui;
