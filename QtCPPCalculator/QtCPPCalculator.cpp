@@ -18,7 +18,7 @@ QString inputNumber;
  * m = multiplication
  * d = division
  * o = modulus
- * p = power
+ * e = exponent
  * factorial happens once the button is clicked, hence it does not need an operation variable
 */
 char operation = 'n';
@@ -45,6 +45,7 @@ QtCPPCalculator::QtCPPCalculator(QWidget* parent)
 // code below for when buttons are clicked
 void QtCPPCalculator::on_zero_clicked()
 {
+    
     inputNumber = "0";
     if (ui.displayField->text() == "0") {
         inputNumber = "0";
@@ -370,11 +371,21 @@ void QtCPPCalculator::on_clear_clicked()
 
 void QtCPPCalculator::on_equal_clicked()
 {
+    double prevNumDouble = previousNumber.toDouble();
+    double currNumDouble = currentNumber.toDouble();
+
     switch (operation) {
         case 'a':
-            result = previousNumber.toDouble() + currentNumber.toDouble();
+            result = prevNumDouble + currNumDouble;
             ui.displayField->setText(QString::number(result));
     }
+
+    operation = 'n';
+    ui.add->setChecked(false);
+    ui.subtract->setChecked(false);
+    ui.multiply->setChecked(false);
+    ui.divide->setChecked(false);
+
 }
 
 /* NOT WORKING
