@@ -289,6 +289,12 @@ void QtCPPCalculator::on_add_toggled()
         ui.equationDisplayField->setText(ui.equationDisplayField->text() + "+");
     }
 
+    if (operation != 'a') {
+        ui.subtract->setChecked(false);
+        ui.multiply->setChecked(false);
+        ui.divide->setChecked(false);
+    }
+
     operation = 'a';
 }
 
@@ -299,6 +305,12 @@ void QtCPPCalculator::on_subtract_toggled()
         currentNumber = "0";
         ui.displayField->setText("0");
         ui.equationDisplayField->setText(ui.equationDisplayField->text() + "-");
+    }
+
+    if (operation != 's') {
+        ui.add->setChecked(false);
+        ui.multiply->setChecked(false);
+        ui.divide->setChecked(false);
     }
 
     operation = 's';
@@ -312,6 +324,13 @@ void QtCPPCalculator::on_multiply_toggled()
         ui.displayField->setText("0");
         ui.equationDisplayField->setText(ui.equationDisplayField->text() +  "*");
     }
+
+    if (operation != 'm') {
+        ui.add->setChecked(false);
+        ui.subtract->setChecked(false);
+        ui.divide->setChecked(false);
+    }
+
     operation = 'm';
 }
 
@@ -322,6 +341,12 @@ void QtCPPCalculator::on_divide_toggled()
         currentNumber = "0";
         ui.displayField->setText("0");
         ui.equationDisplayField->setText(ui.equationDisplayField->text() + "/");
+    }
+
+    if (operation != 'd') {
+        ui.add->setChecked(false);
+        ui.subtract->setChecked(false);
+        ui.multiply->setChecked(false);
     }
     
     operation = 'd';
