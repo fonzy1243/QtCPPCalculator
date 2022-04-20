@@ -11,7 +11,17 @@ QString previousNumber = "0";
 QString displayNumber = "0";
 QString equationNumber = "0";
 QString inputNumber;
-char operation;
+/* 
+ * n = neutral
+ * a = addition
+ * s = subtraction
+ * m = multiplication
+ * d = division
+ * o = modulus
+ * p = power
+ * factorial happens once the button is clicked, hence it does not need an operation variable
+*/
+char operation = 'n';
 double result;
 
 
@@ -266,14 +276,25 @@ void QtCPPCalculator::on_del_clicked()
 {
     if (ui.displayField->text() == "0") {
         ui.displayField->setText("0");
+        ui.equationDisplayField->setText("0");
     }
-    else if (ui.displayField->text() == "")
+    else if (ui.displayField->text().isEmpty() || ui.displayField->text().isNull())
     {
         ui.displayField->setText("0");
+        ui.equationDisplayField->setText("0");
+    }
+    else if (ui.displayField->text().size() == 1) {
+        displayNumber = "0";
+        ui.displayField->setText(displayNumber);
+        ui.equationDisplayField->setText(displayNumber);
+        currentNumber = displayNumber;
     }
     else
     {
-        ui.displayField->setText(ui.displayField->text().remove(ui.displayField->text().last(1)));
+        displayNumber.remove((displayNumber.size() - 1), 1);
+        ui.displayField->setText(displayNumber);
+        currentNumber, equationNumber = displayNumber;
+        ui.equationDisplayField->setText(equationNumber);
     }
 }
 
@@ -289,10 +310,15 @@ void QtCPPCalculator::on_add_toggled()
         ui.equationDisplayField->setText(ui.equationDisplayField->text() + "+");
     }
 
-    if (operation != 'a') {
+    if (operation =='a') {
+        operation = 'n';
+    }
+    else if (operation != 'a') {
         ui.subtract->setChecked(false);
         ui.multiply->setChecked(false);
         ui.divide->setChecked(false);
+        equationNumber.remove((equationNumber.size() - 1), 1);
+        ui.equationDisplayField->setText(equationNumber);
     }
 
     operation = 'a';
