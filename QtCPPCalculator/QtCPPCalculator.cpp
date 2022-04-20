@@ -4,6 +4,7 @@
 #include <qstring.h>
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 using namespace std;
 
 string currentNumber = "0";
@@ -256,6 +257,18 @@ void QtCPPCalculator::on_clear_clicked()
     ui.multiply->setChecked(false);
     ui.divide->setChecked(false);
 }
+
+/* equal button
+void QtCPPCalculator::on_equal_clicked()
+{
+    switch (operation) {
+        case 'a':
+
+            result = currentNumber + previousNumber;
+            break;
+    }
+}
+*/
 
 /* NOT WORKING
 void QtCPPCalculator::ifDisplayBlank()
