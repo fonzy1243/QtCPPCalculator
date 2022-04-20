@@ -11,7 +11,17 @@ QString previousNumber = "0";
 QString displayNumber = "0";
 QString equationNumber = "0";
 QString inputNumber;
-char operation;
+/* 
+ * n = neutral
+ * a = addition
+ * s = subtraction
+ * m = multiplication
+ * d = division
+ * o = modulus
+ * p = power
+ * factorial happens once the button is clicked, hence it does not need an operation variable
+*/
+char operation = 'n';
 double result;
 
 
@@ -247,48 +257,119 @@ void QtCPPCalculator::on_nine_clicked()
 
 void QtCPPCalculator::on_del_clicked()
 {
-	if (ui.displayField->text() == "0") {
-		ui.displayField->setText("0");
-		ui.equationDisplayField->setText("0");
-	}
-	else if (ui.displayField->text().isEmpty() || ui.displayField->text().isNull())
-	{
-		ui.displayField->setText("0");
-		ui.equationDisplayField->setText("0");
-	}
-	else if (ui.displayField->text().size() == 1) {
-		displayNumber = "0";
-		ui.displayField->setText(displayNumber);
-		ui.equationDisplayField->setText(displayNumber);
-		currentNumber = displayNumber;
-	}
-	else
-	{
-		displayNumber.remove((displayNumber.size() - 1), 1);
-		ui.displayField->setText(displayNumber);
-		currentNumber, equationNumber = displayNumber;
-		ui.equationDisplayField->setText(equationNumber);
-	}
+    if (ui.displayField->text() == "0") {
+        ui.displayField->setText("0");
+        ui.equationDisplayField->setText("0");
+    }
+    else if (ui.displayField->text().isEmpty() || ui.displayField->text().isNull())
+    {
+        ui.displayField->setText("0");
+        ui.equationDisplayField->setText("0");
+    }
+    else if (ui.displayField->text().size() == 1) {
+        displayNumber = "0";
+        ui.displayField->setText(displayNumber);
+        ui.equationDisplayField->setText(displayNumber);
+        currentNumber = displayNumber;
+    }
+    else
+    {
+        displayNumber.remove((displayNumber.size() - 1), 1);
+        ui.displayField->setText(displayNumber);
+        currentNumber, equationNumber = displayNumber;
+        ui.equationDisplayField->setText(equationNumber);
+    }
 }
 
 void QtCPPCalculator::on_add_toggled()
 {
-	/*                                                                                                                       *
-	 *  we use "0" as a neutral value, so this first block activates if the user has not already inputted a previous number. *
-	 *                                                                                                                       */
-	if (previousNumber == "0") {
-		previousNumber = currentNumber;
-		currentNumber = "0";
-		ui.displayField->setText("0");
-		ui.equationDisplayField->setText(ui.equationDisplayField->text() + "+");
-	}
+    /*                                                                                                                       *
+     *  we use "0" as a neutral value, so this first block activates if the user has not already inputted a previous number. *
+     *                                                                                                                       */
+    if (previousNumber == "0") {
+        previousNumber = currentNumber;
+        currentNumber = "0";
+        ui.displayField->setText("0");
+        ui.equationDisplayField->setText(ui.equationDisplayField->text() + "+");
+    }
+
+    if (operation =='a') {
+        operation = 'n';
+    }
+    else if (operation != 'a') {
+        ui.subtract->setChecked(false);
+        ui.multiply->setChecked(false);
+        ui.divide->setChecked(false);
+        equationNumber.remove((equationNumber.size() - 1), 1);
+        ui.equationDisplayField->setText(equationNumber);
+    }
+
+    operation = 'a';
+}
+
+void QtCPPCalculator::on_subtract_toggled()
+{
+    if (previousNumber == "0") {
+        previousNumber = currentNumber;
+        currentNumber = "0";
+        ui.displayField->setText("0");
+        ui.equationDisplayField->setText(ui.equationDisplayField->text() + "-");
+    }
+
+    if (operation != 's') {
+        ui.add->setChecked(false);
+        ui.multiply->setChecked(false);
+        ui.divide->setChecked(false);
+    }
+
+    operation = 's';
+}
+
+void QtCPPCalculator::on_multiply_toggled()
+{
+    if (previousNumber == "0") {
+        previousNumber = currentNumber;
+        currentNumber = "0";
+        ui.displayField->setText("0");
+        ui.equationDisplayField->setText(ui.equationDisplayField->text() +  "*");
+    }
+
+    if (operation != 'm') {
+        ui.add->setChecked(false);
+        ui.subtract->setChecked(false);
+        ui.divide->setChecked(false);
+    }
+
+    operation = 'm';
+}
+
+void QtCPPCalculator::on_divide_toggled()
+{
+    if (previousNumber == "0") {
+        previousNumber = currentNumber;
+        currentNumber = "0";
+        ui.displayField->setText("0");
+        ui.equationDisplayField->setText(ui.equationDisplayField->text() + "/");
+    }
+
+    if (operation != 'd') {
+        ui.add->setChecked(false);
+        ui.subtract->setChecked(false);
+        ui.multiply->setChecked(false);
+    }
+    
+    operation = 'd';
 }
 
 void QtCPPCalculator::on_clear_clicked()
 {
-	currentNumber, previousNumber, displayNumber, inputNumber = "0";
-	ui.displayField->setText("0");
-	ui.equationDisplayField->setText("0");
+    currentNumber, previousNumber = "0";
+    ui.displayField->setText("0");
+    ui.equationDisplayField->setText("0");
+    ui.add->setChecked(false);
+    ui.subtract->setChecked(false);
+    ui.multiply->setChecked(false);
+    ui.divide->setChecked(false);
 }
 
 /* NOT WORKING
