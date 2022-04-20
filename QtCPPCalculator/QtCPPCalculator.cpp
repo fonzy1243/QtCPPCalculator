@@ -165,7 +165,11 @@ void QtCPPCalculator::on_eight_clicked()
     }
     ui.equationDisplayField->setText(ui.equationDisplayField->text() + "8");
 <<<<<<< HEAD
+<<<<<<< HEAD
     currentNumber += "8";
+=======
+    currentNumber.append("8");
+>>>>>>> parent of f7871ee (Merge branch 'input' into ui)
 =======
     currentNumber.append("8");
 >>>>>>> parent of f7871ee (Merge branch 'input' into ui)
@@ -183,7 +187,11 @@ void QtCPPCalculator::on_nine_clicked()
     }
     ui.equationDisplayField->setText(ui.equationDisplayField->text() + "9");
 <<<<<<< HEAD
+<<<<<<< HEAD
     currentNumber += "9";
+=======
+    currentNumber.append("9");
+>>>>>>> parent of f7871ee (Merge branch 'input' into ui)
 =======
     currentNumber.append("9");
 >>>>>>> parent of f7871ee (Merge branch 'input' into ui)
