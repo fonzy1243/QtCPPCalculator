@@ -24,27 +24,6 @@ QString inputNumber;
 char operation = 'n';
 double result;
 
-
-double sum(double x, double y)
-{
-    return x + y;
-}
-
-double diff(double x, double y)
-{
-    return x - y;
-}
-
-double product(double x, double y)
-{
-    return x * y;
-}
-
-double quotient(double x, double y)
-{
-    return x / y;
-}
-
 /*
 double factorial(double x)
 {
