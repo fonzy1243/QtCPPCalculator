@@ -6,11 +6,14 @@
 #include <string>
 using namespace std;
 
-string currentNumber = "0";
-string previousNumber = "0";
-string displayNumber = "0";
+QString currentNumber = "0";
+QString previousNumber = "0";
+QString displayNumber = "0";
+QString equationNumber = "0";
+QString inputNumber;
 char operation;
 double result;
+
 
 double sum(double x, double y)
 {
@@ -142,15 +145,21 @@ void QtCPPCalculator::on_six_clicked()
 void QtCPPCalculator::on_seven_clicked()
 {
     if (ui.displayField->text() == "0") {
-        ui.displayField->setText("7");
-        ui.equationDisplayField->setText("7");
+        inputNumber = "7";
+        currentNumber = "7";
+        ui.displayField->setText(inputNumber);
+        displayNumber = currentNumber;
     }
-    else
+    else if (ui.displayField->text() != "0")
     {
-        ui.displayField->setText(ui.displayField->text() + "7");
+        inputNumber = "7";
+        currentNumber = ui.displayField->text().append(inputNumber);
+        ui.displayField->setText(ui.displayField->text() + inputNumber);
+        displayNumber = currentNumber;
     }
-    ui.equationDisplayField->setText(ui.equationDisplayField->text() + "7");
-    currentNumber.append("7");
+
+    equationNumber = currentNumber;
+    ui.equationDisplayField->setText(equationNumber);
 }
 
 void QtCPPCalculator::on_eight_clicked()
@@ -164,7 +173,7 @@ void QtCPPCalculator::on_eight_clicked()
         ui.displayField->setText(ui.displayField->text() + "8");
     }
     ui.equationDisplayField->setText(ui.equationDisplayField->text() + "8");
-    currentNumber.append("8");
+    currentNumber += "8";
 }
 
 void QtCPPCalculator::on_nine_clicked()
@@ -178,7 +187,7 @@ void QtCPPCalculator::on_nine_clicked()
         ui.displayField->setText(ui.displayField->text() + "9");
     }
     ui.equationDisplayField->setText(ui.equationDisplayField->text() + "9");
-    currentNumber.append("9");
+    currentNumber += "9";
 }
 
 void QtCPPCalculator::on_del_clicked()
@@ -249,6 +258,7 @@ void QtCPPCalculator::on_divide_toggled()
 void QtCPPCalculator::on_clear_clicked()
 {
     currentNumber, previousNumber = "0";
+    currentNumber, previousNumber, displayNumber, inputNumber = "0";
     ui.displayField->setText("0");
     ui.equationDisplayField->setText("0");
     ui.add->setChecked(false);
