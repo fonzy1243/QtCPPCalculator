@@ -360,11 +360,31 @@ void QtCPPCalculator::on_divide_toggled()
     operation = 'd';
 }
 
+void QtCPPCalculator::on_modulus_toggled()
+{
+    if (previousNumber == "0") {
+        previousNumber = currentNumber;
+        currentNumber = "0";
+        ui.displayField->setText("0");
+        ui.equationDisplayField->setText(ui.equationDisplayField->text() + "mod");
+    }
+
+    if (operation != 'o') {
+        ui.add->setChecked(false);
+        ui.subtract->setChecked(false);
+        ui.multiply->setChecked(false);
+        ui.power->setChecked(false);
+    }
+
+    operation = 'o';
+}
+
 void QtCPPCalculator::on_clear_clicked()
 {
     currentNumber, previousNumber = "0";
-    ui.displayField->setText(currentNumber);
-    ui.equationDisplayField->setText(currentNumber);
+    ui.displayField->setText("0");
+    ui.equationDisplayField->setText("0");
+
     ui.add->setChecked(false);
     ui.subtract->setChecked(false);
     ui.multiply->setChecked(false);
@@ -399,11 +419,12 @@ void QtCPPCalculator::on_equal_clicked()
         case 'e':
             result = pow(prevNumDouble, currNumDouble);
             break;
-
+        case 'o':
+            // the modulus function is not accurate with decimals due to the nature of floating-point numbers.
+            result = fmod(prevNumDouble, currNumDouble);
     }
 
     ui.displayField->setText(QString::number(result));
-
     operation = 'n';
     ui.add->setChecked(false);
     ui.subtract->setChecked(false);
