@@ -24,17 +24,6 @@ QString inputNumber;
 char operation = 'n';
 double result;
 
-/*
-double factorial(double x)
-{
-    while (x < 0)
-    {
-
-    }
-}
-*/
-
-
 QtCPPCalculator::QtCPPCalculator(QWidget* parent)
     : QMainWindow(parent)
 {
@@ -236,19 +225,22 @@ void QtCPPCalculator::on_nine_clicked()
     if (ui.displayField->text() == "0") {
         inputNumber = "9";
         currentNumber = "9";
+        equationNumber = "9";
         ui.displayField->setText(inputNumber);
         displayNumber = currentNumber;
+
+        ui.equationDisplayField->setText(equationNumber);
     }
     else
     {
         inputNumber = "9";
+        equationNumber = "9";
         currentNumber = ui.displayField->text().append(inputNumber);
         ui.displayField->setText(ui.displayField->text() + inputNumber);
         displayNumber = currentNumber;
-    }
 
-    equationNumber = currentNumber;
-    ui.equationDisplayField->setText(equationNumber);
+        ui.equationDisplayField->setText(ui.equationDisplayField->text() + equationNumber);
+    }
 }
 
 void QtCPPCalculator::on_del_clicked()
