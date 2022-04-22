@@ -45,7 +45,6 @@ QtCPPCalculator::QtCPPCalculator(QWidget* parent)
 // code below for when buttons are clicked
 void QtCPPCalculator::on_zero_clicked()
 {
-    
     inputNumber = "0";
     if (ui.displayField->text() == "0") {
         inputNumber = "0";
@@ -317,6 +316,7 @@ void QtCPPCalculator::on_subtract_toggled()
         ui.add->setChecked(false);
         ui.multiply->setChecked(false);
         ui.divide->setChecked(false);
+        ui.power->setChecked(false);
     }
 
     operation = 's';
@@ -335,6 +335,7 @@ void QtCPPCalculator::on_multiply_toggled()
         ui.add->setChecked(false);
         ui.subtract->setChecked(false);
         ui.divide->setChecked(false);
+        ui.power->setChecked(false);
     }
 
     operation = 'm';
@@ -353,6 +354,7 @@ void QtCPPCalculator::on_divide_toggled()
         ui.add->setChecked(false);
         ui.subtract->setChecked(false);
         ui.multiply->setChecked(false);
+        ui.power->setChecked(false);
     }
     
     operation = 'd';
@@ -361,12 +363,19 @@ void QtCPPCalculator::on_divide_toggled()
 void QtCPPCalculator::on_clear_clicked()
 {
     currentNumber, previousNumber = "0";
-    ui.displayField->setText("0");
-    ui.equationDisplayField->setText("0");
+    ui.displayField->setText(currentNumber);
+    ui.equationDisplayField->setText(currentNumber);
     ui.add->setChecked(false);
     ui.subtract->setChecked(false);
     ui.multiply->setChecked(false);
     ui.divide->setChecked(false);
+    ui.power->setChecked(false);
+}
+
+void QtCPPCalculator::on_ce_clicked()
+{
+    currentNumber = "0";
+    ui.displayField->setText(currentNumber);
 }
 
 void QtCPPCalculator::on_equal_clicked()
@@ -377,15 +386,30 @@ void QtCPPCalculator::on_equal_clicked()
     switch (operation) {
         case 'a':
             result = prevNumDouble + currNumDouble;
-            ui.displayField->setText(QString::number(result));
+            break;
+        case 's':
+            result = prevNumDouble - currNumDouble;
+            break;
+        case 'm':
+            result = prevNumDouble * currNumDouble;
+            break;
+        case 'd':
+            result = prevNumDouble / currNumDouble;
+            break;
+        case 'e':
+            result = pow(prevNumDouble, currNumDouble);
+            break;
+
     }
+
+    ui.displayField->setText(QString::number(result));
 
     operation = 'n';
     ui.add->setChecked(false);
     ui.subtract->setChecked(false);
     ui.multiply->setChecked(false);
     ui.divide->setChecked(false);
-
+    ui.power->setChecked(false);
 }
 
 /* NOT WORKING
